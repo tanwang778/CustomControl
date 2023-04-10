@@ -11,7 +11,6 @@ import android.widget.Toast
 class TitleLayout(context: Context, attrs: AttributeSet) : LinearLayout(context, attrs) {
     private lateinit var titleBack: Button
     private lateinit var titleEdit: Button
-
     init {
         LayoutInflater.from(context).inflate(R.layout.title, this)
         titleBack = findViewById(R.id.titleBack)
