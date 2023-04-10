@@ -1,32 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:background="#8B2196F3">
+
     <Button
         android:id="@+id/titleBack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_margin="5dp"
+        android:layout_margin="6dp"
+        android:backgroundTint="#DD3F51B5"
+        android:drawableStart="@drawable/baseline_arrow_back_ios_new_24"
         android:text="Back"
         android:textColor="#000000" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="0dp"
-        android:layout_gravity="center"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:layout_weight="1"
-        android:textSize="24sp"
         android:gravity="center"
-        android:text="Title text" />
+        android:text="Title text"
+        android:textSize="24sp" />
 
     <Button
         android:id="@+id/titleEdit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_margin="5dp"
+        android:layout_margin="6dp"
+        android:backgroundTint="#DD3F51B5"
+        android:drawableEnd="@drawable/baseline_edit_24"
         android:text="Edit"
-        android:textColor="#000000"/>
+        android:textColor="#000000" />
 </LinearLayout>
