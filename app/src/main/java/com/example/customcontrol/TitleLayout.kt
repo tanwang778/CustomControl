@@ -11,7 +11,7 @@ import com.example.customcontrol.databinding.TitleBinding
 
 /**
  * @param context 上下文
- * @param attrs 样式
+ * @param attrs 属性集
  */
 class TitleLayout(context: Context, attrs: AttributeSet) : LinearLayout(context, attrs) {
     //    private lateinit var titleBack: Button
@@ -28,8 +28,14 @@ class TitleLayout(context: Context, attrs: AttributeSet) : LinearLayout(context,
             val activity = context as Activity
             activity.finish()
         }
-        binding.titleEdit.setOnClickListener {
-            Toast.makeText(context, "You Clicked Edit Button", Toast.LENGTH_SHORT).show()
-        }
+//        binding.titleEdit.setOnClickListener {
+//
+//        }
+    }
+    public fun setTitle(title:String){
+        binding.textView.text=title
+    }
+    public fun setEdit(clickListener: OnClickListener){
+        binding.titleEdit.setOnClickListener(clickListener)
     }
 }
