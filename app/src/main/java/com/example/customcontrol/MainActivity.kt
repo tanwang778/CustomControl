@@ -1,5 +1,6 @@
 package com.example.customcontrol
 
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -13,6 +14,9 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         supportActionBar?.hide()
+        val sp = getSharedPreferences("data", MODE_PRIVATE)
+        num = sp.getInt("key_num", 0)
+        binding.mainTextNum.text = num.toString()
         binding.titleLayout.setTitle("首页")
         binding.titleLayout.setEdit {
             Toast.makeText(this, "You Clicked Edit Button", Toast.LENGTH_SHORT).show()
@@ -21,7 +25,13 @@ class MainActivity : AppCompatActivity() {
         binding.mainBtnAdd.setOnClickListener {
             num++
             binding.mainTextNum.text = num.toString()
+            save()
         }
     }
 
+    private fun save() {
+        getSharedPreferences("data", Context.MODE_PRIVATE).edit().apply {
+            putInt("key_num", num)
+        }.apply()
+    }
 }
