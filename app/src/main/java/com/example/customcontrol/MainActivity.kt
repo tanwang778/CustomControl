@@ -16,6 +16,7 @@ class MainActivity : AppCompatActivity() {
         supportActionBar?.hide()
         val sp = getSharedPreferences("data", MODE_PRIVATE)
         num = sp.getInt("key_num", 0)
+        show()
         binding.mainTextNum.text = num.toString()
         binding.titleLayout.setTitle("首页")
         binding.titleLayout.setEdit {
@@ -24,20 +25,21 @@ class MainActivity : AppCompatActivity() {
         //+1事件
         binding.mainBtnAdd.setOnClickListener {
             num++
-            binding.mainTextNum.text = num.toString()
-            save()
+            show()
         }
         //-1事件
         binding.mainBtnSub.setOnClickListener {
             num--
-            binding.mainTextNum.text = num.toString()
-            save()
+            show()
         }
     }
-
     private fun save() {
         getSharedPreferences("data", Context.MODE_PRIVATE).edit().apply {
             putInt("key_num", num)
         }.apply()
+    }
+   private fun show(){
+        binding.mainTextNum.text = num.toString()
+        save()
     }
 }
