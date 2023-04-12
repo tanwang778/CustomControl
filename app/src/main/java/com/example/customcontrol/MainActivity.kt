@@ -27,6 +27,12 @@ class MainActivity : AppCompatActivity() {
             binding.mainTextNum.text = num.toString()
             save()
         }
+        //-1事件
+        binding.mainBtnSub.setOnClickListener {
+            num--
+            binding.mainTextNum.text = num.toString()
+            save()
+        }
     }
 
     private fun save() {
